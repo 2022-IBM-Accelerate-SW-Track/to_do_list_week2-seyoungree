@@ -22,11 +22,10 @@ class Home extends Component {
     todo.id = Math.random();
   
      // make list of todo.content
-     var contentLst = this.state.todos.map((todo) => { return todo.content; });
+     //var contentLst = this.state.todos.map((todo) => { return todo.content; });
 
      // check if todo to be added is already in todos
-     if (contentLst.find(i => i === todo.content)) {
-       console.log("true");
+     if (this.state.todos.find(t => t.content.trim().toLowerCase() === todo.content.trim().toLowerCase())) {
        return;
      }
      else {
